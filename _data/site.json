@@ -1,0 +1,148 @@
+{
+  "brand": {
+    "line1": "Prague",
+    "line2": "Shortcuts",
+    "tag": "Prague with kids",
+    "by": "an English edition of Pražské zkratky",
+    "czech_url": "https://www.prazskezkratky.cz/"
+  },
+  "nav": [
+    {
+      "label": "Plan your day",
+      "href": "#plan"
+    },
+    {
+      "label": "Guides",
+      "href": "#guides"
+    },
+    {
+      "label": "Neighbourhoods",
+      "href": "#areas"
+    },
+    {
+      "label": "This season",
+      "href": "#season"
+    },
+    {
+      "label": "Shop",
+      "href": "#shop"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    }
+  ],
+  "hero": {
+    "label": "Family guide to Prague, written by a local mum",
+    "title_thin": "Prague with kids,",
+    "title_bold": "<em>minus</em> the guesswork.",
+    "lead": "Tested tips for walks, playgrounds, towers and rainy-day rescues — sorted so you can pick something in a few minutes and head out. Every tip comes from real days out with real kids.",
+    "img": "castle_map.jpg",
+    "img_alt": "A girl reading a panoramic map in front of St Vitus Cathedral",
+    "stamp": "15+ years exploring Prague with kids"
+  },
+  "planner": {
+    "who": [
+      [
+        "toddler",
+        "a toddler"
+      ],
+      [
+        "school",
+        "school-age kids"
+      ],
+      [
+        "teens",
+        "teenagers"
+      ],
+      [
+        "all",
+        "kids of all ages"
+      ]
+    ],
+    "time": [
+      [
+        "short",
+        "an hour or two"
+      ],
+      [
+        "half",
+        "half a day"
+      ],
+      [
+        "full",
+        "a whole day"
+      ]
+    ],
+    "weather": [
+      [
+        "fine",
+        "looking good"
+      ],
+      [
+        "rain",
+        "rainy"
+      ]
+    ]
+  },
+  "marquee": [
+    "Charles Bridge",
+    "Prague Castle",
+    "Petřín",
+    "Vyšehrad",
+    "Playgrounds",
+    "Rainy days",
+    "Free things to do",
+    "Day trips by train",
+    "Towers & views"
+  ],
+  "stats": [
+    {
+      "num": 15,
+      "suf": "+",
+      "label": "years walking Prague with kids"
+    },
+    {
+      "num": 290,
+      "suf": "",
+      "label": "articles on the Czech site"
+    },
+    {
+      "num": 3,
+      "suf": "",
+      "label": "kids who test every tip"
+    },
+    {
+      "num": 5,
+      "suf": "",
+      "label": "years of the Pražské zkratky shop"
+    }
+  ],
+  "about": {
+    "label": "Who's behind it",
+    "title_thin": "Hi, I'm",
+    "title_bold": "Růžena.",
+    "quote": "Every tip comes from real experience. Not from a catalogue, not from a press release — from what actually works with kids.",
+    "paras": [
+      "I'm a mum of three and I've been exploring Prague with children for more than 15 years. Knowing where to go isn't enough — what matters is that kids actually notice the city and enjoy it.",
+      "Pražské zkratky started more than five years ago, grew without any public funding and stands mainly on parents' recommendations. Thousands of people visit it every month. This English edition brings the same tested tips to families visiting or living in Prague: manageable routes, places where kids last, minimum pointless transfers and maximum time together."
+    ],
+    "img": "wishes.jpg",
+    "img2": "podzim_petrin.jpg"
+  },
+  "break": {
+    "img": "hero_bridge.jpg",
+    "text": "The less time you spend searching, the more time you have with your kids."
+  },
+  "newsletter": {
+    "title_thin": "Never wonder",
+    "title_bold": "<em>where to go</em> again.",
+    "text": "Once a month: a hand-picked list of family events, walks and places where you can save. Free, so you don't have to keep searching where to go.",
+    "button": "Subscribe"
+  },
+  "footer": {
+    "email": "info@prazskezkratky.cz",
+    "instagram": "https://www.instagram.com/prazskezkratky/",
+    "facebook": "https://www.facebook.com/Prazskezkratky"
+  }
+}

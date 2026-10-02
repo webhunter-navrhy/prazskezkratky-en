@@ -1,0 +1,23 @@
+{
+  "label": "From the shop",
+  "title_thin": "Take Prague",
+  "title_bold": "<em>outside</em>",
+  "text": "Maps, games and printables that make kids look around — and turn “we went somewhere” into a day they remember.",
+  "items": [
+    {
+      "title": "Panoramic map of Prague Castle",
+      "text": "Works as a guide and a game in one. Available in Czech and English, with a free animal hunt.",
+      "img": "castle_map_en.jpg"
+    },
+    {
+      "title": "Animal hunt at St Vitus Cathedral",
+      "text": "A printable PDF: owls, fish and other creatures hidden in stone and metal that most people walk past.",
+      "img": "animals_cathedral.jpg"
+    },
+    {
+      "title": "To je Praha — the book to have at home",
+      "text": "If we had to pick one book to start discovering Prague with kids, it would be this one.",
+      "img": "tojepraha.jpg"
+    }
+  ]
+}

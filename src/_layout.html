@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>{% block title %}{% endblock %}</title>
+<meta name="description" content="{% block desc %}Tested tips for exploring Prague with kids — walks, playgrounds, towers and rainy-day ideas from a Prague mum of three.{% endblock %}">
+<meta name="theme-color" content="#F6F1E7">
+<link rel="icon" href="{{ root }}assets/favicon.svg?v={{ v.fav }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ root }}assets/style.css?v={{ v.css }}">
+</head>
+<body class="{% block bodyclass %}{% endblock %}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav" id="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="{{ root }}index.html" aria-label="{{ site.brand.line1 }} {{ site.brand.line2 }} — home">
+      <span class="logo-box"><span>{{ site.brand.line1 }}</span><span>{{ site.brand.line2 }}</span></span>
+      <span class="logo-tag">{{ site.brand.tag }}</span>
+    </a>
+    <nav class="nav-menu" id="menu" aria-label="Main">
+      {% for n in site.nav %}<a class="ul" href="{{ root }}index.html{{ n.href }}">{{ n.label }}</a>{% endfor %}
+      <span class="lang"><a href="{{ site.brand.czech_url }}" hreflang="cs">CZ</a><b>EN</b></span>
+    </nav>
+    <button class="nav-toggle" id="toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
+</header>
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <a class="logo logo--light" href="{{ root }}index.html">
+        <span class="logo-box"><span>{{ site.brand.line1 }}</span><span>{{ site.brand.line2 }}</span></span>
+        <span class="logo-tag">{{ site.brand.tag }}</span>
+      </a>
+      <p class="foot-by">The English edition of Pražské zkratky — tips for families exploring Prague with children.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Explore</h4>
+      {% for n in site.nav %}<a class="ul" href="{{ root }}index.html{{ n.href }}">{{ n.label }}</a>{% endfor %}
+    </div>
+    <div class="foot-col">
+      <h4>Say hello</h4>
+      <a class="ul" href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a>
+      <a class="ul" href="{{ site.footer.instagram }}" target="_blank" rel="noopener">Instagram</a>
+      <a class="ul" href="{{ site.footer.facebook }}" target="_blank" rel="noopener">Facebook</a>
+      <a class="ul" href="{{ site.brand.czech_url }}" hreflang="cs">Česká verze · prazskezkratky.cz</a>
+    </div>
+  </div>
+  <div class="wrap foot-base"><span>© {{ year }} Pražské zkratky</span><span>Design proposal · Studentské Weby</span></div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="{{ root }}assets/main.js?v={{ v.js }}" defer></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+{% extends "_layout.html" %}
+{% block title %}{{ site.brand.line1 }} {{ site.brand.line2 }} — Prague with kids, minus the guesswork{% endblock %}
+{% block bodyclass %}home{% endblock %}
+{% block main %}
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="label">{{ site.hero.label }}</p>
+      <h1 class="h1 words"><span class="thin">{{ site.hero.title_thin }}</span> <span class="bold">{{ site.hero.title_bold }}</span></h1>
+      <p class="hero-lead">{{ site.hero.lead }}</p>
+    </div>
+    <figure class="hero-fig">
+      <span class="frame" aria-hidden="true"></span>
+      <div class="hero-img"><img src="assets/img/{{ site.hero.img }}" alt="{{ site.hero.img_alt }}" fetchpriority="high"></div>
+      <figcaption class="stamp"><span>{{ site.hero.stamp }}</span></figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap">
+    <form class="planner" id="plan" aria-label="Plan your day">
+      <p class="planner-k">Plan your day in one sentence</p>
+      <p class="planner-s">
+        We're in Prague with
+        <label class="pick"><span class="sr">Who</span><select name="who">{% for k,l in site.planner.who %}<option value="{{ k }}"{% if loop.index==2 %} selected{% endif %}>{{ l }}</option>{% endfor %}</select></label>,
+        we have
+        <label class="pick"><span class="sr">Time</span><select name="time">{% for k,l in site.planner.time %}<option value="{{ k }}"{% if loop.index==2 %} selected{% endif %}>{{ l }}</option>{% endfor %}</select></label>
+        and the weather is
+        <label class="pick"><span class="sr">Weather</span><select name="weather">{% for k,l in site.planner.weather %}<option value="{{ k }}">{{ l }}</option>{% endfor %}</select></label>.
+      </p>
+      <div class="planner-go">
+        <span class="planner-count" id="planCount" aria-live="polite"></span>
+        <button class="btn" type="submit">Show my ideas <span aria-hidden="true">→</span></button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    {% for _ in range(2) %}<span>{% for m in site.marquee %}{{ m }}<i>✦</i>{% endfor %}</span>{% endfor %}
+  </div>
+</div>
+
+<section class="start">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="label">Start here</p>
+      <h2 class="h2"><span class="thin">The guides families</span> <span class="bold"><em>read first</em></span></h2>
+    </div>
+    {% set by = {} %}{% for g in guides %}{% set _ = by.update({g.id: g}) %}{% endfor %}
+    <div class="bento">
+      {% for id in ['castle','wenceslas','oneday','free'] %}{% set g = by[id] %}
+      <a class="tile tile--{{ loop.index }} reveal" href="{{ g.href or '#' }}" {% if not g.href %}data-sample{% endif %}>
+        <img src="{{ g.img|img(900 if loop.index > 1 else None) }}" alt="" loading="lazy">
+        <span class="tile-meta">{{ g.area }} · {{ g.meta }}</span>
+        <span class="tile-t">{{ g.title }}</span>
+        {% if loop.index == 1 %}<span class="tile-p">{{ g.teaser }}</span>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="library" id="guides">
+  <div class="wrap">
+    <div class="lib-head">
+      <div class="reveal">
+        <p class="label">All guides</p>
+        <h2 class="h2"><span class="thin">Pick by what</span> <span class="bold">you need <em>today</em></span></h2>
+      </div>
+      <div class="chips" role="toolbar" aria-label="Filter guides">
+        {% for k,l in [['all','All'],['free','Free'],['rainy','Rainy day'],['toddlers','Toddlers'],['walks','Walks'],['views','Towers & views'],['playgrounds','Playgrounds'],['daytrips','Day trips']] %}
+        <button class="chip{% if k=='all' %} on{% endif %}" data-tag="{{ k }}" type="button">{{ l }}</button>
+        {% endfor %}
+      </div>
+    </div>
+    <p class="lib-note" id="libNote" hidden></p>
+    <div class="cards" id="cards">
+      {% for g in guides %}
+      <a class="card" href="{{ g.href or '#' }}" {% if not g.href %}data-sample{% endif %} data-tags="{{ g.tags|join(' ') }}" data-who="{{ g.who|join(' ') }}" data-time="{{ g.time|join(' ') }}" data-weather="{{ g.weather|join(' ') }}">
+        <span class="card-img"><img src="{{ g.img|img(900) }}" alt="" loading="lazy"></span>
+        <span class="card-meta"><b>{{ g.area }}</b><span>{{ g.meta }}</span></span>
+        <span class="card-t">{{ g.title }}</span>
+        <span class="card-p">{{ g.teaser }}</span>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="lib-empty" id="libEmpty" hidden>Nothing matches exactly — try a different combination, or <button type="button" class="linkbtn" data-reset>show all guides</button>.</p>
+  </div>
+</section>
+
+<section class="areas dark" id="areas">
+  <div class="wrap areas-head">
+    <div class="reveal">
+      <p class="label label--light">Neighbourhoods</p>
+      <h2 class="h2"><span class="thin">Prague, one</span> <span class="bold"><em>corner</em> at a time</span></h2>
+    </div>
+    <p class="areas-hint reveal">Drag or scroll sideways <span aria-hidden="true">→</span></p>
+  </div>
+  <div class="hscroll" id="hscroll" tabindex="0" aria-label="Neighbourhoods">
+    {% for a in areas %}
+    <article class="area">
+      <div class="area-img"><img src="{{ a.img|img }}" alt="" loading="lazy"></div>
+      <span class="area-n">{{ '%02d'|format(loop.index) }}</span>
+      <h3>{{ a.name }}</h3>
+      <p>{{ a.text }}</p>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="wrap stats">
+    {% for s in site.stats %}
+    <div class="stat reveal"><span class="stat-n"><span data-count="{{ s.num }}">{{ s.num }}</span>{{ s.suf }}</span><span class="stat-l">{{ s.label }}</span></div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="season" id="season">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="label">{{ season.label }}</p>
+      <h2 class="h2"><span class="thin">{{ season.title_thin }}</span> <span class="bold"><em>{{ season.title_bold }}</em></span></h2>
+    </div>
+    <div class="rows">
+      {% for s in season['items'] %}
+      <a class="row reveal" href="#" data-sample data-img="{{ s.img|img(900) }}">
+        <span class="row-n">{{ '%02d'|format(loop.index) }}</span>
+        <span class="row-t">{{ s.title }}</span>
+        <span class="row-p">{{ s.text }}</span>
+        <span class="row-w">{{ s.when }}</span>
+        <img class="row-thumb" src="{{ s.img|img(900) }}" alt="" loading="lazy">
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="row-preview" id="rowPreview" aria-hidden="true"></div>
+</section>
+
+<section class="break">
+  <div class="break-img"><img src="assets/img/{{ site.break.img }}" alt="Charles Bridge and the Old Town Bridge Tower at dusk" loading="lazy"></div>
+  <div class="wrap break-in"><p class="reveal">{{ site.break.text }}</p></div>
+</section>
+
+<section class="shop" id="shop">
+  <div class="wrap">
+    <div class="shop-head">
+      <div class="reveal">
+        <p class="label">{{ shop.label }}</p>
+        <h2 class="h2"><span class="thin">{{ shop.title_thin }}</span> <span class="bold">{{ shop.title_bold }}</span></h2>
+      </div>
+      <p class="shop-lead reveal">{{ shop.text }}</p>
+    </div>
+    <div class="products">
+      {% for p in shop['items'] %}
+      <a class="product reveal" href="#" data-sample>
+        <span class="product-img"><img src="{{ p.img|img(900) }}" alt="" loading="lazy"></span>
+        <span class="product-t">{{ p.title }}</span>
+        <span class="product-p">{{ p.text }}</span>
+        <span class="product-cta ul">See in the shop</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-in">
+    <div class="about-imgs">
+      <div class="about-img a1 clip"><img src="{{ site.about.img|img(900) }}" alt="Charles Bridge and the Lesser Town bridge tower" loading="lazy"></div>
+      <div class="about-img a2 clip"><img src="{{ site.about.img2|img(900) }}" alt="Autumn view over Prague from Petřín" loading="lazy"></div>
+    </div>
+    <div class="about-copy">
+      <p class="label reveal">{{ site.about.label }}</p>
+      <h2 class="h2 reveal"><span class="thin">{{ site.about.title_thin }}</span> <span class="bold"><em>{{ site.about.title_bold }}</em></span></h2>
+      <blockquote class="about-q reveal">„{{ site.about.quote }}“</blockquote>
+      {% for p in site.about.paras %}<p class="reveal">{{ p }}</p>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="news dark">
+  <div class="wrap news-in">
+    <h2 class="h2 reveal"><span class="thin">{{ site.newsletter.title_thin }}</span> <span class="bold">{{ site.newsletter.title_bold }}</span></h2>
+    <div class="reveal">
+      <p>{{ site.newsletter.text }}</p>
+      <form class="news-form" data-sample-form>
+        <label class="sr" for="nmail">E-mail</label>
+        <input id="nmail" type="email" placeholder="your@email.com" required>
+        <button class="btn btn--light" type="submit">{{ site.newsletter.button }}</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

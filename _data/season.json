@@ -1,0 +1,11 @@
+{
+  "label": "This season",
+  "title_thin": "Autumn in Prague",
+  "title_bold": "with kids",
+  "items": [
+    {"title": "Kite festivals around Prague", "text": "A family plan that costs almost nothing — and makes some of the best autumn memories.", "img": "kites.jpg", "when": "Autumn 2026"},
+    {"title": "A secret viewpoint over the whole city", "text": "A short route up Petřín that small legs can manage — the kids run ahead, you stop and look.", "img": "podzim_petrin.jpg", "when": "Any weekend"},
+    {"title": "November without the crowds", "text": "Exhibitions, treasure hunts and places to hide from the rain when the days get shorter.", "img": "royal_garden.jpg", "when": "November"},
+    {"title": "An advent calendar made of Prague memory cards", "text": "One Prague memory game, 24 envelopes and a few gingerbreads — a reason to go out and find the places from the cards.", "img": "pexeso_advent.jpg", "when": "From 1 December"}
+  ]
+}

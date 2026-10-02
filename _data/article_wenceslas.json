@@ -1,0 +1,84 @@
+{
+  "slug": "st-wenceslas-charles-bridge",
+  "kicker": "Walks · Charles Bridge",
+  "title_thin": "Four St Wenceslases",
+  "title_bold": "on <em>Charles Bridge</em>",
+  "lead": "On Charles Bridge you can find St Wenceslas three times — as a little boy with his grandmother Ludmila, as a duke among other saints and as a lone knight in armour. The fourth one is waiting before you even step onto the bridge. Take the kids on a short walk from Křižovnické Square towards the Lesser Town and try to find them all.",
+  "hero": "kampa_bridge.jpg",
+  "hero_alt": "Charles Bridge over the Vltava with the Old Town Bridge Tower",
+  "facts": [
+    {
+      "k": "Route",
+      "v": "Křižovnické Square → Charles Bridge → Lesser Town"
+    },
+    {
+      "k": "Time",
+      "v": "about 40–60 minutes with kids and stops"
+    },
+    {
+      "k": "Cost",
+      "v": "free"
+    },
+    {
+      "k": "Pushchair",
+      "v": "no steps, but uneven cobbles and plenty of visitors"
+    }
+  ],
+  "stops": [
+    {
+      "title": "The Vine Column: St Wenceslas among the grapes",
+      "img": "wenc01.jpg",
+      "img2": "wenc06.jpg",
+      "paras": [
+        "Your first stop is before you even reach the bridge. On the corner of St Francis Church on Křižovnické Square stands a baroque column with a grapevine winding around it. Right at the top is St Wenceslas in armour and a cloak.",
+        "Sculptor Jan Jiří Bendl made the column in 1676. The vine recalls the legend that Duke Wenceslas grew his own grapes and made wine for mass.",
+        "Before you move on, look down. Right under the column are the oldest paving stones in Prague. They come from the Judith Bridge, which crossed the Vltava here from the second half of the 12th century."
+      ],
+      "task": "Find the grapes on the column. How many can you spot? And can you tell what St Wenceslas is holding?",
+      "extra": "One more thing: the column originally stood closer to the Old Town Bridge Tower. A round plaque in the square's cobbles marks the old spot."
+    },
+    {
+      "title": "Wenceslas between Norbert and Sigismund",
+      "img": "wenc04.jpg",
+      "paras": [
+        "Now step onto Charles Bridge and walk along the right-hand side towards the Lesser Town. You're looking for the seventh statue group, where three saints stand together: Norbert, Wenceslas and Sigismund.",
+        "You'll recognise St Wenceslas by his banner — he's on the left as you face the group. St Norbert in bishop's robes stands in the middle and St Sigismund with a crown and sword on the right.",
+        "Josef Max made the group in 1853. Interestingly, it's already the third statue to stand on this spot; the two before it didn't survive."
+      ],
+      "task": "Don't tell the kids straight away which of the three men is Wenceslas. Let them guess first from what each figure is holding."
+    },
+    {
+      "title": "St Ludmila teaching little Wenceslas to read",
+      "img": "wenc03.jpg",
+      "paras": [
+        "Look for the next Wenceslas on the opposite, left-hand side of the bridge. This time he isn't a grown-up duke in armour but a little boy learning to read.",
+        "He stands next to his grandmother, St Ludmila, who points into an open Bible and holds a veil in her other hand. According to legend, it was with a veil that she was strangled.",
+        "The group was made after 1720, probably in the workshop of Matthias Bernhard Braun, and originally stood at Prague Castle. On the bridge today you'll see a copy from 1999; the original is kept in the Gorlice hall at Vyšehrad."
+      ],
+      "task": "Find little Wenceslas and the book he's learning from. Then look at the relief on the pedestal — it tells a much sadder part of his story.",
+      "extra": "A different Wenceslas statue used to stand here, showing him between two angels. It fell into the Vltava during the great flood of 1784; some of its pieces were only pulled out of the river in 2004."
+    },
+    {
+      "title": "The last Wenceslas by the Lesser Town towers",
+      "img": "wenc05.jpg",
+      "paras": [
+        "Keep to the left side of the bridge towards the Lesser Town. Almost at the very end you'll find a lone statue of St Wenceslas in armour, with a banner and a shield.",
+        "Josef Kamil Böhm made it in 1859. Under Wenceslas' feet you can read the Latin inscription Ora pro nobis — “Pray for us”."
+      ],
+      "task": "Compare this Wenceslas with the one you saw at the start on Křižovnické Square. How are they alike? And how are they different?"
+    }
+  ],
+  "who": {
+    "title": "So who was St Wenceslas?",
+    "text": "If the kids don't know his story yet, a few basics are enough to start. St Wenceslas was a Czech duke of the Přemyslid dynasty who lived in the 10th century. His grandmother was St Ludmila, who according to legend helped bring him up. Wenceslas was murdered in Stará Boleslav and after his death became the patron saint of the Czech lands. We remember him on 28 September, which is also Czech Statehood Day."
+  },
+  "next": {
+    "title": "Where to go next",
+    "text": "Before you leave Charles Bridge, don't forget to make a wish — but most visitors stop at the wrong statue. If the kids still have energy, head down to Kampa, walk past the Devil's Stream or find one of the playgrounds right under the bridge.",
+    "cards": [
+      "playgrounds",
+      "castle",
+      "free"
+    ]
+  }
+}

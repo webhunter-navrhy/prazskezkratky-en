@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Prague Castle & Hradčany",
+    "img": "cathedral.jpg",
+    "text": "Cathedral animals, a working postbox and gardens where the day slows down."
+  },
+  {
+    "name": "Charles Bridge & Lesser Town",
+    "img": "rainy.jpg",
+    "text": "Statue hunts, a wishing spot and playgrounds right under the bridge."
+  },
+  {
+    "name": "Old Town",
+    "img": "orloj.jpg",
+    "text": "The astronomical clock, towers to climb and hidden details for sharp eyes."
+  },
+  {
+    "name": "Petřín Hill",
+    "img": "petrin_tower.jpg",
+    "text": "Lookout tower, mirror maze, a secret viewpoint and long downhill runs."
+  },
+  {
+    "name": "Vyšehrad",
+    "img": "vysehrad.jpg",
+    "text": "Legends, casemates and plenty of space to run — in every season."
+  },
+  {
+    "name": "Stromovka & Troja",
+    "img": "stromovka_train.jpg",
+    "text": "Trains to wave at, the zoo and the city's biggest park."
+  }
+]

@@ -1,0 +1,76 @@
+{% extends "_layout.html" %}
+{% block title %}{{ a.title_thin }} {{ a.title_bold|striptags }} — {{ site.brand.line1 }} {{ site.brand.line2 }}{% endblock %}
+{% block desc %}{{ a.lead[:150] }}…{% endblock %}
+{% block bodyclass %}guide{% endblock %}
+{% block main %}
+<article class="g">
+  <header class="g-head wrap">
+    <p class="crumbs"><a class="ul" href="{{ root }}index.html#guides">Guides</a> <span>/</span> {{ a.kicker }}</p>
+    <h1 class="h1 h1--guide words"><span class="thin">{{ a.title_thin }}</span> <span class="bold">{{ a.title_bold }}</span></h1>
+    <p class="g-lead">{{ a.lead }}</p>
+  </header>
+
+  <div class="wrap g-hero">
+    <span class="frame" aria-hidden="true"></span>
+    <div class="g-hero-img"><img src="{{ root }}assets/img/{{ a.hero }}" alt="{{ a.hero_alt }}" fetchpriority="high"></div>
+    <dl class="facts">
+      {% for f in a.facts %}<div><dt>{{ f.k }}</dt><dd>{{ f.v }}</dd></div>{% endfor %}
+    </dl>
+  </div>
+
+  <div class="wrap g-body">
+    <aside class="toc" aria-label="Stops">
+      <p class="toc-k">The route</p>
+      <ol>
+        {% for s in a.stops %}<li><a href="#stop-{{ loop.index }}" data-toc><span>{{ loop.index }}</span>{{ s.title.split(':')[0] }}</a></li>{% endfor %}
+        <li><a href="#who" data-toc><span>?</span>Who was he?</a></li>
+      </ol>
+      <a class="btn btn--small" href="#" data-sample>Print this hunt</a>
+    </aside>
+
+    <div class="g-main">
+      {% for s in a.stops %}
+      <section class="stop" id="stop-{{ loop.index }}">
+        <div class="stop-head reveal">
+          <span class="stop-n">{{ loop.index }}</span>
+          <h2>{{ s.title }}</h2>
+        </div>
+        <div class="stop-grid{% if s.img2 %} stop-grid--two{% endif %}">
+          <figure class="stop-img clip"><img src="{{ s.img|img(900) }}" alt="" loading="lazy"></figure>
+          {% if s.img2 %}<figure class="stop-img stop-img--sm clip"><img src="{{ s.img2|img(900) }}" alt="" loading="lazy"></figure>{% endif %}
+        </div>
+        {% for p in s.paras %}<p class="reveal">{{ p }}</p>{% endfor %}
+        <div class="task reveal"><span class="task-k">Task for kids</span><p>{{ s.task }}</p></div>
+        {% if s.extra %}<p class="extra reveal">{{ s.extra }}</p>{% endif %}
+      </section>
+      {% endfor %}
+
+      <section class="who" id="who">
+        <h2 class="h2 reveal">{{ a.who.title }}</h2>
+        <p class="reveal">{{ a.who.text }}</p>
+      </section>
+    </div>
+  </div>
+
+  <section class="g-next">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <p class="label">Keep going</p>
+        <h2 class="h2"><span class="thin">{{ a.next.title }}</span></h2>
+        <p class="g-next-p">{{ a.next.text }}</p>
+      </div>
+      {% set by = {} %}{% for g in guides %}{% set _ = by.update({g.id: g}) %}{% endfor %}
+      <div class="cards cards--3">
+        {% for id in a.next.cards %}{% set g = by[id] %}
+        <a class="card" href="#" data-sample>
+          <span class="card-img"><img src="{{ g.img|img(900) }}" alt="" loading="lazy"></span>
+          <span class="card-meta"><b>{{ g.area }}</b><span>{{ g.meta }}</span></span>
+          <span class="card-t">{{ g.title }}</span>
+          <span class="card-p">{{ g.teaser }}</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</article>
+{% endblock %}
